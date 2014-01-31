@@ -7,6 +7,7 @@
 //
 
 #import "FTLNewMatchViewModel.h"
+#import "FTLMatchStore.h"
 
 @interface FTLNewMatchViewModel ()
 
@@ -28,9 +29,7 @@
         }];
 
     self.submitCommand = [[RACCommand alloc] initWithEnabled:validFormSignal signalBlock:^RACSignal *(id input) {
-        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            return nil;
-        }];
+        return [[FTLMatchStore sharedStore] postMatchWithHomeScore:self.homeScore awayScore:self.awayScore];
     }];
 
     return self;

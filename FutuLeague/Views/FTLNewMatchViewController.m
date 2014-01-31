@@ -88,9 +88,16 @@
     });
 
     @weakify(self);
-    [self.viewModel.submitCommand.executionSignals subscribeNext:^(id _) {
+    [[self.viewModel.submitCommand.executionSignals flattenMap:^(RACSignal *execution) {
+        // Sends RACUnit after the execution completes.
+        return [[execution ignoreValues] concat:[RACSignal return:RACUnit.defaultUnit]];
+    }] subscribeNext:^(id _) {
         @strongify(self);
         [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    }];
+
+    [self.viewModel.submitCommand.errors subscribeNext:^(id x) {
+        NSLog(@"Login error: %@", x);
     }];
 }
 
