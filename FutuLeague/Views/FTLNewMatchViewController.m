@@ -37,19 +37,22 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:nil action:nil];
+    self.navigationItem.rightBarButtonItem = ({
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:nil action:nil];
 
-    @weakify(self);
-    self.navigationItem.rightBarButtonItem.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            @strongify(self);
-            [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
-                [subscriber sendCompleted];
+        @weakify(self);
+        item.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+            return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+                @strongify(self);
+                [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
+                    [subscriber sendCompleted];
+                }];
+
+                return nil;
             }];
-
-            return nil;
         }];
-    }];
+        item;
+    });
 }
 
 @end

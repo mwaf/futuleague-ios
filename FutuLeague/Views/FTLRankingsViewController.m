@@ -47,21 +47,23 @@ static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellI
         [self.tableView reloadData];
     }];
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-                                              initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
-    self.navigationItem.rightBarButtonItem.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            @strongify(self);
-            FTLNewMatchViewController *newMatchViewController = [[FTLNewMatchViewController alloc] init];
-            UINavigationController *navigationViewController = [[UINavigationController alloc]
-                                                                initWithRootViewController:newMatchViewController];
-            [self presentViewController:navigationViewController animated:YES completion:^{
-                [subscriber sendCompleted];
-            }];
+    self.navigationItem.rightBarButtonItem = ({
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
+        item.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+            return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+                @strongify(self);
+                FTLNewMatchViewController *newMatchViewController = [[FTLNewMatchViewController alloc] init];
+                UINavigationController *navigationViewController = [[UINavigationController alloc]
+                                                                    initWithRootViewController:newMatchViewController];
+                [self presentViewController:navigationViewController animated:YES completion:^{
+                    [subscriber sendCompleted];
+                }];
 
-            return nil;
+                return nil;
+            }];
         }];
-    }];
+        item;
+    });
 }
 
 - (void)viewWillAppear:(BOOL)animated
