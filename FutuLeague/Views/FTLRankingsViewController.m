@@ -104,17 +104,21 @@ static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellI
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FTLPlayersCell *cell = [tableView dequeueReusableCellWithIdentifier:FTLRankingsTableCellIdentifier
-                                                            forIndexPath:indexPath];
+                                                           forIndexPath:indexPath];
+
+    UIColor *evenColor = [UIColor colorWithWhite:0.9 alpha:1.0];
+    UIColor *oddColor = [UIColor colorWithRed:0.84 green:0.84 blue:0.88 alpha:1.0];
+    
 
     if (indexPath.row % 2 == 0) {
-        cell.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
+        cell.backgroundColor = oddColor;
     }
     else {
-        cell.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.8 alpha:1.0];
+        cell.backgroundColor = evenColor;
     }
     
+
     NSInteger playerPosition = indexPath.row + 1;
-    
     [cell fillCellWithPlayer:[self playerAtIndexPath:indexPath] atPosition:playerPosition];
     return cell;
 }
