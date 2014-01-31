@@ -10,4 +10,9 @@
 
 @interface FTLNewMatchViewModel : RVMViewModel
 
+@property (nonatomic, readonly) RACCommand *submitCommand;
+
+@property (nonatomic, copy) NSNumber *homeScore;
+@property (nonatomic, copy) NSNumber *awayScore;
+
 @end
