@@ -23,6 +23,7 @@
 		0F003BDC189C12E3005E35F6 /* FTLRankingsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BDB189C12E3005E35F6 /* FTLRankingsViewModel.m */; };
 		0F003BDF189C144E005E35F6 /* FTLPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BDE189C144E005E35F6 /* FTLPlayer.m */; };
 		3A18958FB7B044F69148A9C7 /* libPods-FutuLeague.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85619236010D42FBB50D56B4 /* libPods-FutuLeague.a */; };
+		6F91E2C1189C2CCA00CFD9F5 /* ModelsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F91E2C0189C2CCA00CFD9F5 /* ModelsSpec.m */; };
 		8E8EC01BECBD42B88F6E1997 /* libPods-FutuLeagueTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F9D42626D64B7E973C0D49 /* libPods-FutuLeagueTests.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		0F003BDD189C144E005E35F6 /* FTLPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLPlayer.h; sourceTree = "<group>"; };
 		0F003BDE189C144E005E35F6 /* FTLPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLPlayer.m; sourceTree = "<group>"; };
 		13F9D42626D64B7E973C0D49 /* libPods-FutuLeagueTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FutuLeagueTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F91E2C0189C2CCA00CFD9F5 /* ModelsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelsSpec.m; sourceTree = "<group>"; };
 		85619236010D42FBB50D56B4 /* libPods-FutuLeague.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FutuLeague.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC97C4AD9ECC4E36ADB7611F /* Pods-FutuLeague.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutuLeague.xcconfig"; path = "Pods/Pods-FutuLeague.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				0F003BC5189C1021005E35F6 /* Supporting Files */,
+				6F91E2C0189C2CCA00CFD9F5 /* ModelsSpec.m */,
 			);
 			path = FutuLeagueTests;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F91E2C1189C2CCA00CFD9F5 /* ModelsSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
