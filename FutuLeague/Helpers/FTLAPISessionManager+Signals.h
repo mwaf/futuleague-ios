@@ -11,5 +11,6 @@
 @interface FTLAPISessionManager (Signals)
 
 - (RACSignal *)signalForGET:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (RACSignal *)signalForPOST:(NSString *)URLString parameters:(NSDictionary *)parameters;
 
 @end

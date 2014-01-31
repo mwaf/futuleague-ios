@@ -16,7 +16,23 @@ static NSString * const FTLErrorInfoTaskKey = @"FTLErrorInfoTaskKey";
 - (RACSignal *)signalForGET:(NSString *)URLString parameters:(NSDictionary *)parameters
 {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        NSURLSessionDataTask *dataTask = [[FTLAPISessionManager sharedManager] GET:URLString parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSURLSessionDataTask *dataTask = [self GET:URLString parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+            [subscriber sendNext:responseObject];
+            [subscriber sendCompleted];
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            [subscriber sendError:[self errorWithTask:task fromError:error]];
+        }];
+
+        return [RACDisposable disposableWithBlock:^{
+            [dataTask cancel];
+        }];
+    }] replayLazily];
+}
+
+- (RACSignal *)signalForPOST:(NSString *)URLString parameters:(NSDictionary *)parameters
+{
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        NSURLSessionDataTask *dataTask = [self POST:URLString parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
             [subscriber sendNext:responseObject];
             [subscriber sendCompleted];
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
