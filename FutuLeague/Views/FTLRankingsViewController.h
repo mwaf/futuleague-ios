@@ -6,6 +6,6 @@
 //  Copyright (c) 2014 Futurice. All rights reserved.
 //
 
-@interface FTLRankingsViewController : UIViewController
+@interface FTLRankingsViewController : UITableViewController
 
 @end

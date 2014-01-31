@@ -8,4 +8,6 @@
 
 @interface FTLRankingsViewModel : RVMViewModel
 
+@property (nonatomic, strong, readonly) NSArray *model;
+
 @end
