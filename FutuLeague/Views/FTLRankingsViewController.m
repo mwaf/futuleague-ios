@@ -9,6 +9,7 @@
 #import "FTLRankingsViewController.h"
 #import "FTLRankingsViewModel.h"
 #import "FTLPlayer.h"
+#import "FTLNewMatchViewController.h"
 
 static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellIdentifier";
 
@@ -45,6 +46,22 @@ static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellI
         @strongify(self);
         [self.tableView reloadData];
     }];
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                              initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
+    self.navigationItem.rightBarButtonItem.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            @strongify(self);
+            FTLNewMatchViewController *newMatchViewController = [[FTLNewMatchViewController alloc] init];
+            UINavigationController *navigationViewController = [[UINavigationController alloc]
+                                                                initWithRootViewController:newMatchViewController];
+            [self presentViewController:navigationViewController animated:YES completion:^{
+                [subscriber sendCompleted];
+            }];
+
+            return nil;
+        }];
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -59,6 +76,13 @@ static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellI
     [super viewDidDisappear:animated];
 
     self.viewModel.active = NO;
+}
+
+#pragma mark - User Interaction
+
+- (void)newMatchButtonTapped
+{
+
 }
 
 #pragma mark - UITableViewDataSource
