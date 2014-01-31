@@ -7,15 +7,45 @@
 //
 
 #import "Kiwi.h"
+#import "FTLPlayer.h"
 
-SPEC_BEGIN(MathSpec)
+SPEC_BEGIN(ModelsSpec)
 
-describe(@"Math", ^{
-    it(@"is pretty cool", ^{
-        NSUInteger a = 16;
-        NSUInteger b = 26;
-        [[theValue(a + b) should] equal:theValue(42)];
+describe(@"Player Model", ^{
+    __block NSArray *players;
+    __block FTLPlayer *firstPlayer;
+    
+    beforeAll(^{
+        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+        NSString *path = [bundle pathForResource:@"players" ofType:@"json"];
+        players = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path]
+                                                                options:0
+                                                                  error:NULL];
+        
+        firstPlayer = [MTLJSONAdapter modelOfClass:[FTLPlayer class] fromJSONDictionary:players[0] error:NULL];
     });
+    
+    context(@"parse json to dictionary", ^{
+        it(@"dictionary should not be nil", ^{
+            [[players shouldNot] beNil];
+        });
+    });
+
+    context(@"parse json entries to Player models", ^{
+        
+        it(@"first model should not be nil", ^{
+            [[firstPlayer shouldNot] beNil];
+        });
+        
+        it(@"players name should be Jon", ^{
+            [firstPlayer.name isEqualToString:@"Jon"];
+        });
+        
+        it(@"players rating should be 5", ^{
+            [[theValue(firstPlayer.rating) should] equal:theValue(5)];
+        });
+    });
+    
 });
 
 SPEC_END
