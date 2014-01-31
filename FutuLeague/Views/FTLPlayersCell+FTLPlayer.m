@@ -11,9 +11,9 @@
 
 @implementation FTLPlayersCell (FTLPlayer)
 
-- (void)fillCellWithPlayer:(FTLPlayer *)player
+- (void)fillCellWithPlayer:(FTLPlayer *)player atPosition:(NSInteger)position
 {
-    self.nameLabel.text = player.name;
+    self.nameLabel.text = [NSString stringWithFormat:@"%d. %@", position, player.name];
     self.ratingLabel.text = [NSString stringWithFormat:@"%.1f", player.rating];
 }
 
