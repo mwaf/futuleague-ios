@@ -10,3 +10,7 @@ target 'FutuLeague' do
   pod 'ReactiveViewModel'
 
 end
+
+target 'FutuLeagueTests' do
+  pod 'Kiwi/XCTest'
+end

@@ -20,7 +20,6 @@
 		0F003BC0189C1021005E35F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F003BA5189C1021005E35F6 /* Foundation.framework */; };
 		0F003BC1189C1021005E35F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F003BA9189C1021005E35F6 /* UIKit.framework */; };
 		0F003BC9189C1021005E35F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0F003BC7189C1021005E35F6 /* InfoPlist.strings */; };
-		0F003BCB189C1021005E35F6 /* FutuLeagueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BCA189C1021005E35F6 /* FutuLeagueTests.m */; };
 		0F003BD9189C1184005E35F6 /* FTLRankingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BD8189C1184005E35F6 /* FTLRankingsViewController.m */; };
 		0F003BDC189C12E3005E35F6 /* FTLRankingsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BDB189C12E3005E35F6 /* FTLRankingsViewModel.m */; };
 		0F003BDF189C144E005E35F6 /* FTLPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BDE189C144E005E35F6 /* FTLPlayer.m */; };
@@ -30,6 +29,9 @@
 		0F003BED189C3FF0005E35F6 /* FTLNewMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BEC189C3FF0005E35F6 /* FTLNewMatchViewController.m */; };
 		0F003BF0189C406D005E35F6 /* FTLNewMatchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BEF189C406D005E35F6 /* FTLNewMatchViewModel.m */; };
 		3A18958FB7B044F69148A9C7 /* libPods-FutuLeague.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85619236010D42FBB50D56B4 /* libPods-FutuLeague.a */; };
+		6F91E2C1189C2CCA00CFD9F5 /* ModelsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F91E2C0189C2CCA00CFD9F5 /* ModelsSpec.m */; };
+		6F91E2C3189C2F3000CFD9F5 /* players.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F91E2C2189C2F3000CFD9F5 /* players.json */; };
+		8E8EC01BECBD42B88F6E1997 /* libPods-FutuLeagueTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F9D42626D64B7E973C0D49 /* libPods-FutuLeagueTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,7 @@
 /* Begin PBXFileReference section */
 		08C457F6189C23FD00E174FD /* FTLClub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLClub.h; sourceTree = "<group>"; };
 		08C457F7189C23FD00E174FD /* FTLClub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLClub.m; sourceTree = "<group>"; };
+		0C7ABD5B6BCC4A3298B5F479 /* Pods-FutuLeagueTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutuLeagueTests.xcconfig"; path = "Pods/Pods-FutuLeagueTests.xcconfig"; sourceTree = "<group>"; };
 		08C457F9189C30FE00E174FD /* FTLMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLMatch.h; sourceTree = "<group>"; };
 		08C457FA189C30FE00E174FD /* FTLMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLMatch.m; sourceTree = "<group>"; };
 		0F003BA2189C1021005E35F6 /* FutuLeague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutuLeague.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,13 +65,15 @@
 		0F003BBE189C1021005E35F6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0F003BC6189C1021005E35F6 /* FutuLeagueTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FutuLeagueTests-Info.plist"; sourceTree = "<group>"; };
 		0F003BC8189C1021005E35F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0F003BCA189C1021005E35F6 /* FutuLeagueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FutuLeagueTests.m; sourceTree = "<group>"; };
 		0F003BD7189C1184005E35F6 /* FTLRankingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLRankingsViewController.h; sourceTree = "<group>"; };
 		0F003BD8189C1184005E35F6 /* FTLRankingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLRankingsViewController.m; sourceTree = "<group>"; };
 		0F003BDA189C12E3005E35F6 /* FTLRankingsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLRankingsViewModel.h; sourceTree = "<group>"; };
 		0F003BDB189C12E3005E35F6 /* FTLRankingsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLRankingsViewModel.m; sourceTree = "<group>"; };
 		0F003BDD189C144E005E35F6 /* FTLPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLPlayer.h; sourceTree = "<group>"; };
 		0F003BDE189C144E005E35F6 /* FTLPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLPlayer.m; sourceTree = "<group>"; };
+		13F9D42626D64B7E973C0D49 /* libPods-FutuLeagueTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FutuLeagueTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F91E2C0189C2CCA00CFD9F5 /* ModelsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelsSpec.m; sourceTree = "<group>"; };
+		6F91E2C2189C2F3000CFD9F5 /* players.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = players.json; sourceTree = "<group>"; };
 		0F003BE1189C2702005E35F6 /* FTLPlayerStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLPlayerStore.h; sourceTree = "<group>"; };
 		0F003BE2189C2702005E35F6 /* FTLPlayerStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLPlayerStore.m; sourceTree = "<group>"; };
 		0F003BE5189C29A7005E35F6 /* FTLAPISessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLAPISessionManager.h; sourceTree = "<group>"; };
@@ -102,6 +107,7 @@
 				0F003BBF189C1021005E35F6 /* XCTest.framework in Frameworks */,
 				0F003BC1189C1021005E35F6 /* UIKit.framework in Frameworks */,
 				0F003BC0189C1021005E35F6 /* Foundation.framework in Frameworks */,
+				8E8EC01BECBD42B88F6E1997 /* libPods-FutuLeagueTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +122,7 @@
 				0F003BA4189C1021005E35F6 /* Frameworks */,
 				0F003BA3189C1021005E35F6 /* Products */,
 				BC97C4AD9ECC4E36ADB7611F /* Pods-FutuLeague.xcconfig */,
+				0C7ABD5B6BCC4A3298B5F479 /* Pods-FutuLeagueTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +143,7 @@
 				0F003BA9189C1021005E35F6 /* UIKit.framework */,
 				0F003BBE189C1021005E35F6 /* XCTest.framework */,
 				85619236010D42FBB50D56B4 /* libPods-FutuLeague.a */,
+				13F9D42626D64B7E973C0D49 /* libPods-FutuLeagueTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,8 +178,8 @@
 		0F003BC4189C1021005E35F6 /* FutuLeagueTests */ = {
 			isa = PBXGroup;
 			children = (
-				0F003BCA189C1021005E35F6 /* FutuLeagueTests.m */,
 				0F003BC5189C1021005E35F6 /* Supporting Files */,
+				6F91E2C0189C2CCA00CFD9F5 /* ModelsSpec.m */,
 			);
 			path = FutuLeagueTests;
 			sourceTree = "<group>";
@@ -181,6 +189,7 @@
 			children = (
 				0F003BC6189C1021005E35F6 /* FutuLeagueTests-Info.plist */,
 				0F003BC7189C1021005E35F6 /* InfoPlist.strings */,
+				6F91E2C2189C2F3000CFD9F5 /* players.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -266,9 +275,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F003BD1189C1021005E35F6 /* Build configuration list for PBXNativeTarget "FutuLeagueTests" */;
 			buildPhases = (
+				93E1191EA04C4E9EAC59CE54 /* Check Pods Manifest.lock */,
 				0F003BB9189C1021005E35F6 /* Sources */,
 				0F003BBA189C1021005E35F6 /* Frameworks */,
 				0F003BBB189C1021005E35F6 /* Resources */,
+				F442B154B8AE4D3FBDAB17D5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -327,6 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F91E2C3189C2F3000CFD9F5 /* players.json in Resources */,
 				0F003BC9189C1021005E35F6 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +376,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		93E1191EA04C4E9EAC59CE54 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F442B154B8AE4D3FBDAB17D5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-FutuLeagueTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -390,7 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F003BCB189C1021005E35F6 /* FutuLeagueTests.m in Sources */,
+				6F91E2C1189C2CCA00CFD9F5 /* ModelsSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +570,7 @@
 		};
 		0F003BD2189C1021005E35F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C7ABD5B6BCC4A3298B5F479 /* Pods-FutuLeagueTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FutuLeague.app/FutuLeague";
@@ -551,6 +594,7 @@
 		};
 		0F003BD3189C1021005E35F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C7ABD5B6BCC4A3298B5F479 /* Pods-FutuLeagueTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FutuLeague.app/FutuLeague";
