@@ -7,7 +7,7 @@
 //
 
 #import "FTLPlayerStore.h"
-#import "FTLAPISessionManager+ReactiveExtension.h"
+#import "FTLAPISessionManager+Signals.h"
 #import "FTLPlayer.h"
 
 @implementation FTLPlayerStore

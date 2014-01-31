@@ -26,7 +26,7 @@
 		0F003BDF189C144E005E35F6 /* FTLPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BDE189C144E005E35F6 /* FTLPlayer.m */; };
 		0F003BE3189C2702005E35F6 /* FTLPlayerStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BE2189C2702005E35F6 /* FTLPlayerStore.m */; };
 		0F003BE7189C29A7005E35F6 /* FTLAPISessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BE6189C29A7005E35F6 /* FTLAPISessionManager.m */; };
-		0F003BEA189C2BD8005E35F6 /* FTLAPISessionManager+ReactiveExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BE9189C2BD8005E35F6 /* FTLAPISessionManager+ReactiveExtension.m */; };
+		0F003BEA189C2BD8005E35F6 /* FTLAPISessionManager+Signals.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BE9189C2BD8005E35F6 /* FTLAPISessionManager+Signals.m */; };
 		3A18958FB7B044F69148A9C7 /* libPods-FutuLeague.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85619236010D42FBB50D56B4 /* libPods-FutuLeague.a */; };
 /* End PBXBuildFile section */
 
@@ -71,8 +71,8 @@
 		0F003BE2189C2702005E35F6 /* FTLPlayerStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLPlayerStore.m; sourceTree = "<group>"; };
 		0F003BE5189C29A7005E35F6 /* FTLAPISessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLAPISessionManager.h; sourceTree = "<group>"; };
 		0F003BE6189C29A7005E35F6 /* FTLAPISessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLAPISessionManager.m; sourceTree = "<group>"; };
-		0F003BE8189C2BD8005E35F6 /* FTLAPISessionManager+ReactiveExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTLAPISessionManager+ReactiveExtension.h"; sourceTree = "<group>"; };
-		0F003BE9189C2BD8005E35F6 /* FTLAPISessionManager+ReactiveExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTLAPISessionManager+ReactiveExtension.m"; sourceTree = "<group>"; };
+		0F003BE8189C2BD8005E35F6 /* FTLAPISessionManager+Signals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTLAPISessionManager+Signals.h"; sourceTree = "<group>"; };
+		0F003BE9189C2BD8005E35F6 /* FTLAPISessionManager+Signals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTLAPISessionManager+Signals.m"; sourceTree = "<group>"; };
 		85619236010D42FBB50D56B4 /* libPods-FutuLeague.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FutuLeague.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC97C4AD9ECC4E36ADB7611F /* Pods-FutuLeague.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutuLeague.xcconfig"; path = "Pods/Pods-FutuLeague.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,8 +224,8 @@
 			children = (
 				0F003BE5189C29A7005E35F6 /* FTLAPISessionManager.h */,
 				0F003BE6189C29A7005E35F6 /* FTLAPISessionManager.m */,
-				0F003BE8189C2BD8005E35F6 /* FTLAPISessionManager+ReactiveExtension.h */,
-				0F003BE9189C2BD8005E35F6 /* FTLAPISessionManager+ReactiveExtension.m */,
+				0F003BE8189C2BD8005E35F6 /* FTLAPISessionManager+Signals.h */,
+				0F003BE9189C2BD8005E35F6 /* FTLAPISessionManager+Signals.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -368,7 +368,7 @@
 				0F003BDF189C144E005E35F6 /* FTLPlayer.m in Sources */,
 				08C457F8189C23FD00E174FD /* FTLClub.m in Sources */,
 				0F003BE7189C29A7005E35F6 /* FTLAPISessionManager.m in Sources */,
-				0F003BEA189C2BD8005E35F6 /* FTLAPISessionManager+ReactiveExtension.m in Sources */,
+				0F003BEA189C2BD8005E35F6 /* FTLAPISessionManager+Signals.m in Sources */,
 				0F003BB6189C1021005E35F6 /* FTLAppDelegate.m in Sources */,
 				0F003BE3189C2702005E35F6 /* FTLPlayerStore.m in Sources */,
 			);

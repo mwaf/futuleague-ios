@@ -1,5 +1,5 @@
 //
-//  FTLAPISessionManager+ReactiveExtension.h
+//  FTLAPISessionManager+Signals.h
 //  FutuLeague
 //
 //  Created by Martin Richter on 31/01/14.
@@ -8,7 +8,7 @@
 
 #import "FTLAPISessionManager.h"
 
-@interface FTLAPISessionManager (ReactiveExtension)
+@interface FTLAPISessionManager (Signals)
 
 - (RACSignal *)signalForGET:(NSString *)URLString parameters:(NSDictionary *)parameters;
 
