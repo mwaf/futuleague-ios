@@ -8,8 +8,8 @@
 
 #import "FTLRankingsViewController.h"
 #import "FTLRankingsViewModel.h"
-#import "FTLPlayer.h"
 #import "FTLNewMatchViewController.h"
+#import "FTLPlayersCell+FTLPlayer.h"
 
 static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellIdentifier";
 
@@ -39,7 +39,7 @@ static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellI
 {
     [super viewDidLoad];
 
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:FTLRankingsTableCellIdentifier];
+    [self.tableView registerClass:[FTLPlayersCell class] forCellReuseIdentifier:FTLRankingsTableCellIdentifier];
 
     @weakify(self);
     [RACObserve(self.viewModel, model) subscribeNext:^(id x) {
@@ -96,9 +96,9 @@ static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellI
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:FTLRankingsTableCellIdentifier
+    FTLPlayersCell *cell = [tableView dequeueReusableCellWithIdentifier:FTLRankingsTableCellIdentifier
                                                             forIndexPath:indexPath];
-    cell.textLabel.text = [self playerAtIndexPath:indexPath].name;
+    [cell fillCellWithPlayer:[self playerAtIndexPath:indexPath]];
     return cell;
 }
 
