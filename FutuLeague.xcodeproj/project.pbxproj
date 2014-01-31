@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08C457F8189C23FD00E174FD /* FTLClub.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C457F7189C23FD00E174FD /* FTLClub.m */; };
+		08C457FB189C30FE00E174FD /* FTLMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C457FA189C30FE00E174FD /* FTLMatch.m */; };
 		0F003BA6189C1021005E35F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F003BA5189C1021005E35F6 /* Foundation.framework */; };
 		0F003BA8189C1021005E35F6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F003BA7189C1021005E35F6 /* CoreGraphics.framework */; };
 		0F003BAA189C1021005E35F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F003BA9189C1021005E35F6 /* UIKit.framework */; };
@@ -39,6 +40,8 @@
 /* Begin PBXFileReference section */
 		08C457F6189C23FD00E174FD /* FTLClub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLClub.h; sourceTree = "<group>"; };
 		08C457F7189C23FD00E174FD /* FTLClub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLClub.m; sourceTree = "<group>"; };
+		08C457F9189C30FE00E174FD /* FTLMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLMatch.h; sourceTree = "<group>"; };
+		08C457FA189C30FE00E174FD /* FTLMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLMatch.m; sourceTree = "<group>"; };
 		0F003BA2189C1021005E35F6 /* FutuLeague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutuLeague.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F003BA5189C1021005E35F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0F003BA7189C1021005E35F6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -190,6 +193,8 @@
 				0F003BDE189C144E005E35F6 /* FTLPlayer.m */,
 				08C457F6189C23FD00E174FD /* FTLClub.h */,
 				08C457F7189C23FD00E174FD /* FTLClub.m */,
+				08C457F9189C30FE00E174FD /* FTLMatch.h */,
+				08C457FA189C30FE00E174FD /* FTLMatch.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 			files = (
 				0F003BDC189C12E3005E35F6 /* FTLRankingsViewModel.m in Sources */,
 				0F003BD9189C1184005E35F6 /* FTLRankingsViewController.m in Sources */,
+				08C457FB189C30FE00E174FD /* FTLMatch.m in Sources */,
 				0F003BB2189C1021005E35F6 /* main.m in Sources */,
 				0F003BDF189C144E005E35F6 /* FTLPlayer.m in Sources */,
 				08C457F8189C23FD00E174FD /* FTLClub.m in Sources */,
