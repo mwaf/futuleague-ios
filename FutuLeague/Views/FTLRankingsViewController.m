@@ -52,7 +52,9 @@ static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellI
         item.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
             return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
                 @strongify(self);
-                FTLNewMatchViewController *newMatchViewController = [[FTLNewMatchViewController alloc] init];
+                FTLNewMatchViewController *newMatchViewController = [[FTLNewMatchViewController alloc]
+                                                                     initWithPlayers:self.viewModel.model];
+                
                 UINavigationController *navigationViewController = [[UINavigationController alloc]
                                                                     initWithRootViewController:newMatchViewController];
                 [self presentViewController:navigationViewController animated:YES completion:^{

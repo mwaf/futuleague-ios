@@ -12,6 +12,6 @@
 
 + (instancetype)sharedStore;
 
-- (RACSignal *)postMatchWithHomeScore:(NSNumber *)homeScore awayScore:(NSNumber *)awayScore;
+- (RACSignal *)postMatchWithPlayers:(NSArray *)players homeScore:(NSNumber *)homeScore awayScore:(NSNumber *)awayScore;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "FTLMatchStore.h"
 #import "FTLAPISessionManager+Signals.h"
+#import <Mantle/Mantle.h>
 
 @implementation FTLMatchStore
 
@@ -25,11 +26,19 @@
 
 #pragma mark - Networking
 
-- (RACSignal *)postMatchWithHomeScore:(NSNumber *)homeScore awayScore:(NSNumber *)awayScore
+- (RACSignal *)postMatchWithPlayers:(NSArray *)players homeScore:(NSNumber *)homeScore awayScore:(NSNumber *)awayScore
 {
+    NSArray *homeTeam = @[[MTLJSONAdapter JSONDictionaryFromModel:players.firstObject]];
+    NSArray *awayTeam = @[[MTLJSONAdapter JSONDictionaryFromModel:players.lastObject]];
+
     NSDictionary *parameters = @{
-        @"homeScore": homeScore,
-        @"awayScore": awayScore
+        @"homeTeam": homeTeam,
+        @"awayTeam": awayTeam,
+        @"homeClub": [NSNull null],
+        @"awayClub": [NSNull null],
+        @"homeScore": @1,
+        @"awayScore": @0,
+        @"timestamp": @""
     };
 
     return [[FTLAPISessionManager sharedManager] signalForPOST:@"matches" parameters:parameters];

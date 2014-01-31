@@ -24,12 +24,12 @@
 
 #pragma mark - Setup
 
-- (instancetype)init
+- (instancetype)initWithPlayers:(NSArray *)players
 {
     self = [super init];
     if (!self) return nil;
 
-    _viewModel = [[FTLNewMatchViewModel alloc] init];
+    _viewModel = [[FTLNewMatchViewModel alloc] initWithPlayers:players];
 
     _homePlayersButton = ({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];

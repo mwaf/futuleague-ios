@@ -13,14 +13,18 @@
 
 @property (nonatomic, strong) RACCommand *submitCommand;
 
+@property (nonatomic, copy) NSArray *players;
+
 @end
 
 @implementation FTLNewMatchViewModel
 
-- (instancetype)init
+- (instancetype)initWithPlayers:(NSArray *)players
 {
     self = [super init];
     if (!self) return nil;
+
+    _players = players;
 
     RACSignal *validFormSignal = [RACSignal
         combineLatest:@[RACObserve(self, homeScore), RACObserve(self, awayScore)]
@@ -29,7 +33,7 @@
         }];
 
     self.submitCommand = [[RACCommand alloc] initWithEnabled:validFormSignal signalBlock:^RACSignal *(id input) {
-        return [[FTLMatchStore sharedStore] postMatchWithHomeScore:self.homeScore awayScore:self.awayScore];
+        return [[FTLMatchStore sharedStore] postMatchWithPlayers:_players homeScore:self.homeScore awayScore:self.awayScore];
     }];
 
     return self;

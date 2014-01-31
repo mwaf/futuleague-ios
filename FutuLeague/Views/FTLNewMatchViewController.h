@@ -8,4 +8,6 @@
 
 @interface FTLNewMatchViewController : UIViewController
 
+- (instancetype)initWithPlayers:(NSArray *)players;
+
 @end

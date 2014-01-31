@@ -18,7 +18,9 @@ static NSString * const FTLBaseURL = @"http://jonster.futupeople.com/futuleague/
     dispatch_once(&onceToken, ^{
         NSURL *baseURL = [NSURL URLWithString:FTLBaseURL];
         _sharedManager = [[FTLAPISessionManager alloc] initWithBaseURL:baseURL];
-        [_sharedManager.requestSerializer setValue:@"application/vnd.futuleague.v1+json" forHTTPHeaderField:@"Accept"];
+        AFJSONRequestSerializer *requestSerializer = [[AFJSONRequestSerializer alloc] init];
+        [requestSerializer setValue:@"application/vnd.futuleague.v1+json" forHTTPHeaderField:@"Accept"];
+        _sharedManager.requestSerializer = requestSerializer;
     });
 
     return _sharedManager;
