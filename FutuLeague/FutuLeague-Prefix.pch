@@ -15,4 +15,5 @@
     #import <Foundation/Foundation.h>
     #import <ReactiveCocoa/ReactiveCocoa.h>
     #import <ReactiveViewModel/ReactiveViewModel.h>
+    #import <libextobjc/EXTScope.h>
 #endif
