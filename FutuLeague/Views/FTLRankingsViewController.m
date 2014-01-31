@@ -40,6 +40,8 @@ static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellI
     [super viewDidLoad];
 
     [self.tableView registerClass:[FTLPlayersCell class] forCellReuseIdentifier:FTLRankingsTableCellIdentifier];
+    self.tableView.allowsSelection = NO;
+    
 
     @weakify(self);
     [RACObserve(self.viewModel, model) subscribeNext:^(id x) {
@@ -103,6 +105,7 @@ static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellI
 {
     FTLPlayersCell *cell = [tableView dequeueReusableCellWithIdentifier:FTLRankingsTableCellIdentifier
                                                             forIndexPath:indexPath];
+
     if (indexPath.row % 2 == 0) {
         cell.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
     }
