@@ -110,7 +110,9 @@ static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellI
         cell.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.8 alpha:1.0];
     }
     
-    [cell fillCellWithPlayer:[self playerAtIndexPath:indexPath]];
+    NSInteger playerPosition = indexPath.row + 1;
+    
+    [cell fillCellWithPlayer:[self playerAtIndexPath:indexPath] atPosition:playerPosition];
     return cell;
 }
 
