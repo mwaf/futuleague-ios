@@ -5,11 +5,15 @@ PODS:
   - ReactiveCocoa/Core (2.2.3):
     - ReactiveCocoa/no-arc
   - ReactiveCocoa/no-arc (2.2.3)
+  - ReactiveViewModel (0.2):
+    - ReactiveCocoa (~> 2.1)
 
 DEPENDENCIES:
   - ReactiveCocoa
+  - ReactiveViewModel
 
 SPEC CHECKSUMS:
   ReactiveCocoa: b3cb6ebd50f1a0f2e39c6fd7ce3c428b6efcb22b
+  ReactiveViewModel: f636ab3e06b5e69664b69c883fcdb457ab5cb0cb
 
 COCOAPODS: 0.29.0

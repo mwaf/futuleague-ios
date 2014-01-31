@@ -4,5 +4,6 @@ platform :ios, '7.0'
 target 'FutuLeague' do
 
   pod 'ReactiveCocoa'
+  pod 'ReactiveViewModel'
 
 end
