@@ -3,6 +3,7 @@ platform :ios, '7.0'
 
 target 'FutuLeague' do
 
+  pod 'Mantle'
   pod 'ReactiveCocoa'
   pod 'ReactiveViewModel'
 

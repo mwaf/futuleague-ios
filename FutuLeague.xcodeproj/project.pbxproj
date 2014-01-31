@@ -21,6 +21,7 @@
 		0F003BCB189C1021005E35F6 /* FutuLeagueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BCA189C1021005E35F6 /* FutuLeagueTests.m */; };
 		0F003BD9189C1184005E35F6 /* FTLRankingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BD8189C1184005E35F6 /* FTLRankingsViewController.m */; };
 		0F003BDC189C12E3005E35F6 /* FTLRankingsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BDB189C12E3005E35F6 /* FTLRankingsViewModel.m */; };
+		0F003BDF189C144E005E35F6 /* FTLPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BDE189C144E005E35F6 /* FTLPlayer.m */; };
 		3A18958FB7B044F69148A9C7 /* libPods-FutuLeague.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85619236010D42FBB50D56B4 /* libPods-FutuLeague.a */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,8 @@
 		0F003BD8189C1184005E35F6 /* FTLRankingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLRankingsViewController.m; sourceTree = "<group>"; };
 		0F003BDA189C12E3005E35F6 /* FTLRankingsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLRankingsViewModel.h; sourceTree = "<group>"; };
 		0F003BDB189C12E3005E35F6 /* FTLRankingsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLRankingsViewModel.m; sourceTree = "<group>"; };
+		0F003BDD189C144E005E35F6 /* FTLPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLPlayer.h; sourceTree = "<group>"; };
+		0F003BDE189C144E005E35F6 /* FTLPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLPlayer.m; sourceTree = "<group>"; };
 		85619236010D42FBB50D56B4 /* libPods-FutuLeague.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FutuLeague.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC97C4AD9ECC4E36ADB7611F /* Pods-FutuLeague.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutuLeague.xcconfig"; path = "Pods/Pods-FutuLeague.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,6 +183,8 @@
 		0F003BD6189C10D9005E35F6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0F003BDD189C144E005E35F6 /* FTLPlayer.h */,
+				0F003BDE189C144E005E35F6 /* FTLPlayer.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 				0F003BDC189C12E3005E35F6 /* FTLRankingsViewModel.m in Sources */,
 				0F003BD9189C1184005E35F6 /* FTLRankingsViewController.m in Sources */,
 				0F003BB2189C1021005E35F6 /* main.m in Sources */,
+				0F003BDF189C144E005E35F6 /* FTLPlayer.m in Sources */,
 				0F003BB6189C1021005E35F6 /* FTLAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
