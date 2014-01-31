@@ -89,6 +89,11 @@ static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellI
 
 #pragma mark - UITableViewDataSource
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100.0;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.viewModel.model.count;
@@ -98,6 +103,13 @@ static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellI
 {
     FTLPlayersCell *cell = [tableView dequeueReusableCellWithIdentifier:FTLRankingsTableCellIdentifier
                                                             forIndexPath:indexPath];
+    if (indexPath.row % 2 == 0) {
+        cell.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
+    }
+    else {
+        cell.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.8 alpha:1.0];
+    }
+    
     [cell fillCellWithPlayer:[self playerAtIndexPath:indexPath]];
     return cell;
 }

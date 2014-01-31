@@ -14,7 +14,7 @@
 - (void)fillCellWithPlayer:(FTLPlayer *)player
 {
     self.nameLabel.text = player.name;
-    self.ratingLabel.text = [NSString stringWithFormat:@"%f", player.rating];
+    self.ratingLabel.text = [NSString stringWithFormat:@"%.1f", player.rating];
 }
 
 @end
