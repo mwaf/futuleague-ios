@@ -8,6 +8,10 @@
 
 #import "FTLPlayerCell.h"
 
+CGFloat const FTLPlayerCellHeight = 120.0;
+NSInteger const FTLPlayerCellBackgroundColorEven = 0xFAFFFA;
+NSInteger const FTLPlayerCellBackgroundColorOdd = 0xFFFFFF;
+
 static NSString * const FTLPlayerCellNameLabelFontName = @"HelveticaNeue-Light";
 static NSString * const FTLPlayerCellRatingLabelFontName = @"HelveticaNeue-Bold";
 static CGFloat const FTLPlayerCellFontSize = 40.0;

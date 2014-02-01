@@ -41,6 +41,7 @@ static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellI
 
     [self.tableView registerClass:[FTLPlayerCell class] forCellReuseIdentifier:FTLRankingsTableCellIdentifier];
     self.tableView.allowsSelection = NO;
+    self.tableView.rowHeight = FTLPlayerCellHeight;
     
 
     @weakify(self);
@@ -93,11 +94,6 @@ static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellI
 
 #pragma mark - UITableViewDataSource
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 100.0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.viewModel.model.count;
@@ -108,16 +104,13 @@ static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellI
     FTLPlayerCell *cell = [tableView dequeueReusableCellWithIdentifier:FTLRankingsTableCellIdentifier
                                                            forIndexPath:indexPath];
 
-    UIColor *evenColor = [UIColor colorWithWhite:0.9 alpha:1.0];
-    UIColor *oddColor = [UIColor colorWithRed:0.84 green:0.84 blue:0.88 alpha:1.0];
-
     if (indexPath.row % 2 == 0)
     {
-        cell.backgroundColor = oddColor;
+        cell.backgroundColor = COLOR_HEX(FTLPlayerCellBackgroundColorOdd);
     }
     else
     {
-        cell.backgroundColor = evenColor;
+        cell.backgroundColor = COLOR_HEX(FTLPlayerCellBackgroundColorEven);
     }
 
     NSInteger playerRank = indexPath.row + 1;

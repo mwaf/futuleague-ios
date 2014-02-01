@@ -17,7 +17,8 @@
     #import <ReactiveViewModel/ReactiveViewModel.h>
     #import <libextobjc/EXTScope.h>
 
+    #import "ColorHelper.h"
+
     #define MAS_SHORTHAND
     #import "Masonry.h"
-
 #endif
