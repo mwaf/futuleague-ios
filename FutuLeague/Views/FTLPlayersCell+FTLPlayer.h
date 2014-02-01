@@ -12,6 +12,6 @@
 
 @interface FTLPlayersCell (FTLPlayer)
 
-- (void)fillCellWithPlayer:(FTLPlayer *)player atPosition:(NSInteger)position;
+- (void)updateWithPlayer:(FTLPlayer *)player rank:(NSInteger)rank;
 
 @end

@@ -73,6 +73,17 @@
     self.view = view;
 }
 
+- (void)updateViewConstraints
+{
+    [super updateViewConstraints];
+
+    [self.homeScoreField mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.equalTo(self.view);
+        make.leading.equalTo(self.view.mas_leading).with.offset(30);
+        make.bottom.equalTo(self.view.mas_bottom).with.offset(-30);
+    }];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

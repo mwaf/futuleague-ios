@@ -8,39 +8,41 @@
 
 #import "FTLPlayersCell.h"
 
+static NSString * const FTLPlayerCellNameLabelFontName = @"HelveticaNeue-Light";
+static NSString * const FTLPlayerCellRatingLabelFontName = @"HelveticaNeue-Bold";
+static CGFloat const FTLPlayerCellFontSize = 40.0;
+static CGFloat const FTLPlayerCellPadding = 50.0;
+
 @implementation FTLPlayersCell
+
+#pragma mark - Setup
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (!self) return nil;
     
-    NSString *nameLabelFontName = @"HelveticaNeue-Light";
-    NSString *ratingLabelFontName = @"HelveticaNeue-Bold";
-    CGFloat fontSize = 40.0;
-    CGFloat cellPadding = 50.0;
+    _nameLabel = ({
+        UILabel *label = [[UILabel alloc] init];
+        label.font = [UIFont fontWithName:FTLPlayerCellNameLabelFontName size:FTLPlayerCellFontSize];
+        [self.contentView addSubview:label];
+        [label makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.contentView).offset(FTLPlayerCellPadding);
+            make.centerY.equalTo(self.contentView);
+        }];
+        label;
+    });
     
-    
-    
-    _nameLabel = [[UILabel alloc] init];
-    _nameLabel.font = [UIFont fontWithName:nameLabelFontName size:fontSize];
-    [self.contentView addSubview:_nameLabel];
-    
-    _ratingLabel = [[UILabel alloc] init];
-    _ratingLabel.font = [UIFont fontWithName:ratingLabelFontName size:fontSize];
-    [self.contentView addSubview:_ratingLabel];
-    
-    
-    
-    [_nameLabel makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(cellPadding);
-        make.centerY.equalTo(self.contentView);
-    }];
-    
-    [_ratingLabel makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView).offset(-cellPadding);
-        make.centerY.equalTo(self.contentView);
-    }];
+    _ratingLabel = ({
+        UILabel *label = [[UILabel alloc] init];
+        label.font = [UIFont fontWithName:FTLPlayerCellRatingLabelFontName size:FTLPlayerCellFontSize];
+        [self.contentView addSubview:label];
+        [label makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.contentView).offset(-FTLPlayerCellPadding);
+            make.centerY.equalTo(self.contentView);
+        }];
+        label;
+    });
     
     return self;
 }
