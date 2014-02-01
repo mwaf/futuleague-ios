@@ -1,19 +1,19 @@
 //
-//  FTLPlayersCell.m
+//  FTLPlayerCell.m
 //  FutuLeague
 //
 //  Created by Evangelos Sismanidis on 31/01/14.
 //  Copyright (c) 2014 Futurice. All rights reserved.
 //
 
-#import "FTLPlayersCell.h"
+#import "FTLPlayerCell.h"
 
 static NSString * const FTLPlayerCellNameLabelFontName = @"HelveticaNeue-Light";
 static NSString * const FTLPlayerCellRatingLabelFontName = @"HelveticaNeue-Bold";
 static CGFloat const FTLPlayerCellFontSize = 40.0;
 static CGFloat const FTLPlayerCellPadding = 50.0;
 
-@implementation FTLPlayersCell
+@implementation FTLPlayerCell
 
 #pragma mark - Setup
 

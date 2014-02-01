@@ -9,7 +9,7 @@
 #import "FTLRankingsViewController.h"
 #import "FTLRankingsViewModel.h"
 #import "FTLNewMatchViewController.h"
-#import "FTLPlayersCell+FTLPlayer.h"
+#import "FTLPlayerCell+FTLPlayer.h"
 
 static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellIdentifier";
 
@@ -39,7 +39,7 @@ static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellI
 {
     [super viewDidLoad];
 
-    [self.tableView registerClass:[FTLPlayersCell class] forCellReuseIdentifier:FTLRankingsTableCellIdentifier];
+    [self.tableView registerClass:[FTLPlayerCell class] forCellReuseIdentifier:FTLRankingsTableCellIdentifier];
     self.tableView.allowsSelection = NO;
     
 
@@ -105,7 +105,7 @@ static NSString * const FTLRankingsTableCellIdentifier = @"FTLRankingsTableCellI
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FTLPlayersCell *cell = [tableView dequeueReusableCellWithIdentifier:FTLRankingsTableCellIdentifier
+    FTLPlayerCell *cell = [tableView dequeueReusableCellWithIdentifier:FTLRankingsTableCellIdentifier
                                                            forIndexPath:indexPath];
 
     UIColor *evenColor = [UIColor colorWithWhite:0.9 alpha:1.0];
