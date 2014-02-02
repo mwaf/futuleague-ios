@@ -119,6 +119,7 @@ PODS:
   - ReactiveCocoa/no-arc (2.2.3)
   - ReactiveViewModel (0.2):
     - ReactiveCocoa (~> 2.1)
+  - SVProgressHUD (1.0)
 
 DEPENDENCIES:
   - AFNetworking
@@ -128,6 +129,7 @@ DEPENDENCIES:
   - Masonry
   - ReactiveCocoa
   - ReactiveViewModel
+  - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
@@ -138,5 +140,6 @@ SPEC CHECKSUMS:
   Masonry: d673617c9cbc24aaea90fba20b10e47fd9970a39
   ReactiveCocoa: b3cb6ebd50f1a0f2e39c6fd7ce3c428b6efcb22b
   ReactiveViewModel: f636ab3e06b5e69664b69c883fcdb457ab5cb0cb
+  SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
 
 COCOAPODS: 0.29.0

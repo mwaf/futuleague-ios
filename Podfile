@@ -2,14 +2,13 @@
 platform :ios, '7.0'
 
 target 'FutuLeague' do
-
-  pod 'Masonry'
   pod 'AFNetworking'
   pod 'libextobjc'
   pod 'Mantle'
+  pod 'Masonry'
   pod 'ReactiveCocoa'
   pod 'ReactiveViewModel'
-
+  pod 'SVProgressHUD'
 end
 
 target 'FutuLeagueTests' do
