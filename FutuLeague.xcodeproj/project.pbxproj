@@ -87,6 +87,7 @@
 		0F003BEF189C406D005E35F6 /* FTLNewMatchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLNewMatchViewModel.m; sourceTree = "<group>"; };
 		0F450A72189D257F006434FA /* ColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHelper.h; sourceTree = "<group>"; };
 		0F450A78189FA155006434FA /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0F450A7A189FAE01006434FA /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		0FE2A7B8189C512800B5D542 /* FTLMatchStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLMatchStore.h; sourceTree = "<group>"; };
 		0FE2A7B9189C512800B5D542 /* FTLMatchStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLMatchStore.m; sourceTree = "<group>"; };
 		13F9D42626D64B7E973C0D49 /* libPods-FutuLeagueTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FutuLeagueTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +151,7 @@
 		0F003BA4189C1021005E35F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F450A7A189FAE01006434FA /* Reveal.framework */,
 				0F003BA5189C1021005E35F6 /* Foundation.framework */,
 				0F003BA7189C1021005E35F6 /* CoreGraphics.framework */,
 				0F003BA9189C1021005E35F6 /* UIKit.framework */,
@@ -578,9 +580,34 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/mric/Code/Futurice/futuleague-ios",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FutuLeague/FutuLeague-Prefix.pch";
 				INFOPLIST_FILE = "FutuLeague/FutuLeague-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-Wl,-no_compact_unwind",
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					Foundation,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+					"-framework",
+					UIKit,
+					"-ObjC",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -592,6 +619,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/mric/Code/Futurice/futuleague-ios",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FutuLeague/FutuLeague-Prefix.pch";
 				INFOPLIST_FILE = "FutuLeague/FutuLeague-Info.plist";
