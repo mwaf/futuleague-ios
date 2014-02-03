@@ -8,6 +8,7 @@
 
 #import "FTLNewMatchViewController.h"
 #import "FTLNewMatchViewModel.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface FTLNewMatchViewController ()
 
@@ -99,16 +100,19 @@
     });
 
     @weakify(self);
-    [[self.viewModel.submitCommand.executionSignals flattenMap:^(RACSignal *execution) {
-        // Sends RACUnit after the execution completes.
-        return [[execution ignoreValues] concat:[RACSignal return:RACUnit.defaultUnit]];
-    }] subscribeNext:^(id _) {
-        @strongify(self);
-        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    }];
+    [[self.viewModel.submitCommand.executionSignals
+        flattenMap:^(RACSignal *execution) {
+            return [[execution materialize] filter:^BOOL(RACEvent *event) {
+                return event.eventType == RACEventTypeCompleted;
+            }];
+        }] subscribeNext:^(id _) {
+            @strongify(self);
+            [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"hud.status.match.submitSuccess", nil)];
+            [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        }];
 
-    [self.viewModel.submitCommand.errors subscribeNext:^(id x) {
-        NSLog(@"Login error: %@", x);
+    [self.viewModel.submitCommand.errors subscribeNext:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"hud.status.match.submitFailure", nil)];
     }];
 }
 

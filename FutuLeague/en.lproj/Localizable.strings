@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  FutuLeague
+
+  Created by Martin Richter on 03/02/14.
+  Copyright (c) 2014 Futurice. All rights reserved.
+*/
+
+"hud.status.match.submitting" = "Submitting match…";
+"hud.status.match.submitFailure" = "Could not submit match!";
+"hud.status.match.submitSuccess" = "Match was submitted!";
