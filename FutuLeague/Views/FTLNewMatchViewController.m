@@ -9,6 +9,7 @@
 #import "FTLNewMatchViewController.h"
 #import "FTLNewMatchViewModel.h"
 #import "FTLGoalCounter.h"
+#import "FTLPlayersSelectionViewController.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
 @interface FTLNewMatchViewController ()
@@ -37,6 +38,7 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
         button.titleLabel.font = [UIFont systemFontOfSize:FTLFontSizeMedium];
         [button setTitle:@"Home Players" forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(homePlayersButtonTapped) forControlEvents:UIControlEventTouchUpInside];
         button;
     });
 
@@ -44,6 +46,7 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
         button.titleLabel.font = [UIFont systemFontOfSize:FTLFontSizeMedium];
         [button setTitle:@"Away Players" forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(awayPlayersButtonTapped) forControlEvents:UIControlEventTouchUpInside];
         button;
     });
 
@@ -130,6 +133,20 @@
     [self.viewModel.submitCommand.errors subscribeNext:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"hud.status.match.submitFailure", nil)];
     }];
+}
+
+#pragma mark - User Interaction
+
+- (void)homePlayersButtonTapped
+{
+    FTLPlayersSelectionViewModel *viewModel = [[FTLPlayersSelectionViewModel alloc] initWithPlayers:self.viewModel.players];
+    FTLPlayersSelectionViewController *viewController = [[FTLPlayersSelectionViewController alloc] initWithViewModel:viewModel];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (void)awayPlayersButtonTapped
+{
+
 }
 
 @end

@@ -8,3 +8,4 @@
 
 static CGFloat const FTLFontSizeLarge = 70.0;
 static CGFloat const FTLFontSizeMedium = 36.0;
+static CGFloat const FTLFontSizeSmall = 24.0;

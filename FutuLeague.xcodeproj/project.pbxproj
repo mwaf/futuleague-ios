@@ -30,6 +30,10 @@
 		0F003BF0189C406D005E35F6 /* FTLNewMatchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BEF189C406D005E35F6 /* FTLNewMatchViewModel.m */; };
 		0F450A77189FA155006434FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0F450A79189FA155006434FA /* Localizable.strings */; };
 		0F450A7E189FE654006434FA /* FTLGoalCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F450A7D189FE654006434FA /* FTLGoalCounter.m */; };
+		0F450A8218A11B9E006434FA /* FTLPlayersSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F450A8118A11B9E006434FA /* FTLPlayersSelectionViewController.m */; };
+		0F450A8518A11E30006434FA /* FTLPlayersSelectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F450A8418A11E30006434FA /* FTLPlayersSelectionViewModel.m */; };
+		0F450A8818A12386006434FA /* FTLPlayerSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F450A8718A12386006434FA /* FTLPlayerSelectionCell.m */; };
+		0F450A8B18A1254C006434FA /* FTLPlayerSelectionCell+FTLPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F450A8A18A1254C006434FA /* FTLPlayerSelectionCell+FTLPlayer.m */; };
 		0FE2A7BA189C512800B5D542 /* FTLMatchStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE2A7B9189C512800B5D542 /* FTLMatchStore.m */; };
 		3A18958FB7B044F69148A9C7 /* libPods-FutuLeague.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85619236010D42FBB50D56B4 /* libPods-FutuLeague.a */; };
 		6F91E2C1189C2CCA00CFD9F5 /* ModelsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F91E2C0189C2CCA00CFD9F5 /* ModelsSpec.m */; };
@@ -92,6 +96,14 @@
 		0F450A7C189FE654006434FA /* FTLGoalCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLGoalCounter.h; sourceTree = "<group>"; };
 		0F450A7D189FE654006434FA /* FTLGoalCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLGoalCounter.m; sourceTree = "<group>"; };
 		0F450A7F18A113CB006434FA /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		0F450A8018A11B9E006434FA /* FTLPlayersSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLPlayersSelectionViewController.h; sourceTree = "<group>"; };
+		0F450A8118A11B9E006434FA /* FTLPlayersSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLPlayersSelectionViewController.m; sourceTree = "<group>"; };
+		0F450A8318A11E30006434FA /* FTLPlayersSelectionViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLPlayersSelectionViewModel.h; sourceTree = "<group>"; };
+		0F450A8418A11E30006434FA /* FTLPlayersSelectionViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLPlayersSelectionViewModel.m; sourceTree = "<group>"; };
+		0F450A8618A12386006434FA /* FTLPlayerSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLPlayerSelectionCell.h; sourceTree = "<group>"; };
+		0F450A8718A12386006434FA /* FTLPlayerSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLPlayerSelectionCell.m; sourceTree = "<group>"; };
+		0F450A8918A1254C006434FA /* FTLPlayerSelectionCell+FTLPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTLPlayerSelectionCell+FTLPlayer.h"; sourceTree = "<group>"; };
+		0F450A8A18A1254C006434FA /* FTLPlayerSelectionCell+FTLPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTLPlayerSelectionCell+FTLPlayer.m"; sourceTree = "<group>"; };
 		0FE2A7B8189C512800B5D542 /* FTLMatchStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLMatchStore.h; sourceTree = "<group>"; };
 		0FE2A7B9189C512800B5D542 /* FTLMatchStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLMatchStore.m; sourceTree = "<group>"; };
 		13F9D42626D64B7E973C0D49 /* libPods-FutuLeagueTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FutuLeagueTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,12 +233,18 @@
 				6FB24CA2189C505800EDB3F8 /* FTLPlayerCell.m */,
 				6FB24CA3189C505800EDB3F8 /* FTLPlayerCell+FTLPlayer.h */,
 				6FB24CA4189C505800EDB3F8 /* FTLPlayerCell+FTLPlayer.m */,
+				0F450A8618A12386006434FA /* FTLPlayerSelectionCell.h */,
+				0F450A8718A12386006434FA /* FTLPlayerSelectionCell.m */,
+				0F450A8918A1254C006434FA /* FTLPlayerSelectionCell+FTLPlayer.h */,
+				0F450A8A18A1254C006434FA /* FTLPlayerSelectionCell+FTLPlayer.m */,
 				0F003BD7189C1184005E35F6 /* FTLRankingsViewController.h */,
 				0F003BD8189C1184005E35F6 /* FTLRankingsViewController.m */,
 				0F003BEB189C3FF0005E35F6 /* FTLNewMatchViewController.h */,
 				0F003BEC189C3FF0005E35F6 /* FTLNewMatchViewController.m */,
 				0F450A7C189FE654006434FA /* FTLGoalCounter.h */,
 				0F450A7D189FE654006434FA /* FTLGoalCounter.m */,
+				0F450A8018A11B9E006434FA /* FTLPlayersSelectionViewController.h */,
+				0F450A8118A11B9E006434FA /* FTLPlayersSelectionViewController.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,6 +256,8 @@
 				0F003BDB189C12E3005E35F6 /* FTLRankingsViewModel.m */,
 				0F003BEE189C406D005E35F6 /* FTLNewMatchViewModel.h */,
 				0F003BEF189C406D005E35F6 /* FTLNewMatchViewModel.m */,
+				0F450A8318A11E30006434FA /* FTLPlayersSelectionViewModel.h */,
+				0F450A8418A11E30006434FA /* FTLPlayersSelectionViewModel.m */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -443,6 +463,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F450A8B18A1254C006434FA /* FTLPlayerSelectionCell+FTLPlayer.m in Sources */,
 				0F003BDC189C12E3005E35F6 /* FTLRankingsViewModel.m in Sources */,
 				0F003BD9189C1184005E35F6 /* FTLRankingsViewController.m in Sources */,
 				08C457FB189C30FE00E174FD /* FTLMatch.m in Sources */,
@@ -451,6 +472,7 @@
 				0F003BDF189C144E005E35F6 /* FTLPlayer.m in Sources */,
 				08C457F8189C23FD00E174FD /* FTLClub.m in Sources */,
 				0F003BF0189C406D005E35F6 /* FTLNewMatchViewModel.m in Sources */,
+				0F450A8218A11B9E006434FA /* FTLPlayersSelectionViewController.m in Sources */,
 				0F003BE7189C29A7005E35F6 /* FTLAPISessionManager.m in Sources */,
 				0F003BEA189C2BD8005E35F6 /* FTLAPISessionManager+Signals.m in Sources */,
 				6FB24CA6189C505800EDB3F8 /* FTLPlayerCell+FTLPlayer.m in Sources */,
@@ -458,7 +480,9 @@
 				0F003BED189C3FF0005E35F6 /* FTLNewMatchViewController.m in Sources */,
 				0FE2A7BA189C512800B5D542 /* FTLMatchStore.m in Sources */,
 				0F003BB6189C1021005E35F6 /* FTLAppDelegate.m in Sources */,
+				0F450A8818A12386006434FA /* FTLPlayerSelectionCell.m in Sources */,
 				0F003BE3189C2702005E35F6 /* FTLPlayerStore.m in Sources */,
+				0F450A8518A11E30006434FA /* FTLPlayersSelectionViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

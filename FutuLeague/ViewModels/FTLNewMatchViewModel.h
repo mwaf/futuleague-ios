@@ -15,6 +15,8 @@
 @property (nonatomic, copy) NSNumber *homeScore;
 @property (nonatomic, copy) NSNumber *awayScore;
 
+@property (nonatomic, copy, readonly) NSArray *players;
+
 - (instancetype)initWithPlayers:(NSArray *)players;
 
 @end
