@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		08C457F8189C23FD00E174FD /* FTLClub.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C457F7189C23FD00E174FD /* FTLClub.m */; };
 		08C457FB189C30FE00E174FD /* FTLMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C457FA189C30FE00E174FD /* FTLMatch.m */; };
+		08C457FE18A136D500E174FD /* UTCDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C457FD18A136D500E174FD /* UTCDateFormatter.m */; };
 		0F003BA6189C1021005E35F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F003BA5189C1021005E35F6 /* Foundation.framework */; };
 		0F003BA8189C1021005E35F6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F003BA7189C1021005E35F6 /* CoreGraphics.framework */; };
 		0F003BAA189C1021005E35F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F003BA9189C1021005E35F6 /* UIKit.framework */; };
@@ -58,6 +59,8 @@
 		08C457F7189C23FD00E174FD /* FTLClub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLClub.m; sourceTree = "<group>"; };
 		08C457F9189C30FE00E174FD /* FTLMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLMatch.h; sourceTree = "<group>"; };
 		08C457FA189C30FE00E174FD /* FTLMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLMatch.m; sourceTree = "<group>"; };
+		08C457FC18A136D500E174FD /* UTCDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UTCDateFormatter.h; sourceTree = "<group>"; };
+		08C457FD18A136D500E174FD /* UTCDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UTCDateFormatter.m; sourceTree = "<group>"; };
 		0C7ABD5B6BCC4A3298B5F479 /* Pods-FutuLeagueTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FutuLeagueTests.xcconfig"; path = "Pods/Pods-FutuLeagueTests.xcconfig"; sourceTree = "<group>"; };
 		0F003BA2189C1021005E35F6 /* FutuLeague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutuLeague.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F003BA5189C1021005E35F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -91,7 +94,7 @@
 		0F003BEE189C406D005E35F6 /* FTLNewMatchViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLNewMatchViewModel.h; sourceTree = "<group>"; };
 		0F003BEF189C406D005E35F6 /* FTLNewMatchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLNewMatchViewModel.m; sourceTree = "<group>"; };
 		0F450A72189D257F006434FA /* ColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHelper.h; sourceTree = "<group>"; };
-		0F450A78189FA155006434FA /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0F450A78189FA155006434FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0F450A7A189FAE01006434FA /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		0F450A7C189FE654006434FA /* FTLGoalCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLGoalCounter.h; sourceTree = "<group>"; };
 		0F450A7D189FE654006434FA /* FTLGoalCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLGoalCounter.m; sourceTree = "<group>"; };
@@ -289,6 +292,8 @@
 		0F003BE4189C28E7005E35F6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				08C457FC18A136D500E174FD /* UTCDateFormatter.h */,
+				08C457FD18A136D500E174FD /* UTCDateFormatter.m */,
 				0F450A72189D257F006434FA /* ColorHelper.h */,
 				0F003BE5189C29A7005E35F6 /* FTLAPISessionManager.h */,
 				0F003BE6189C29A7005E35F6 /* FTLAPISessionManager.m */,
@@ -471,6 +476,7 @@
 				0F450A7E189FE654006434FA /* FTLGoalCounter.m in Sources */,
 				0F003BDF189C144E005E35F6 /* FTLPlayer.m in Sources */,
 				08C457F8189C23FD00E174FD /* FTLClub.m in Sources */,
+				08C457FE18A136D500E174FD /* UTCDateFormatter.m in Sources */,
 				0F003BF0189C406D005E35F6 /* FTLNewMatchViewModel.m in Sources */,
 				0F450A8218A11B9E006434FA /* FTLPlayersSelectionViewController.m in Sources */,
 				0F003BE7189C29A7005E35F6 /* FTLAPISessionManager.m in Sources */,

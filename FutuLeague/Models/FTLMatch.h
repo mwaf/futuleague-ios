@@ -17,5 +17,6 @@
 @property (nonatomic, copy, readonly) FTLClub *awayClub;
 @property (nonatomic, assign, readonly) CGFloat *homeScore;
 @property (nonatomic, assign, readonly) CGFloat *awayScore;
+@property (nonatomic, copy, readonly) NSDate *timestamp;
 
 @end
