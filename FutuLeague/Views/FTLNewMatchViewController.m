@@ -35,12 +35,14 @@
 
     _homePlayersButton = ({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        button.titleLabel.font = [UIFont systemFontOfSize:FTLFontSizeMedium];
         [button setTitle:@"Home Players" forState:UIControlStateNormal];
         button;
     });
 
     _awayPlayersButton = ({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        button.titleLabel.font = [UIFont systemFontOfSize:FTLFontSizeMedium];
         [button setTitle:@"Away Players" forState:UIControlStateNormal];
         button;
     });

@@ -91,6 +91,7 @@
 		0F450A7A189FAE01006434FA /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		0F450A7C189FE654006434FA /* FTLGoalCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLGoalCounter.h; sourceTree = "<group>"; };
 		0F450A7D189FE654006434FA /* FTLGoalCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLGoalCounter.m; sourceTree = "<group>"; };
+		0F450A7F18A113CB006434FA /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		0FE2A7B8189C512800B5D542 /* FTLMatchStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLMatchStore.h; sourceTree = "<group>"; };
 		0FE2A7B9189C512800B5D542 /* FTLMatchStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLMatchStore.m; sourceTree = "<group>"; };
 		13F9D42626D64B7E973C0D49 /* libPods-FutuLeagueTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FutuLeagueTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +190,7 @@
 				0F450A79189FA155006434FA /* Localizable.strings */,
 				0F003BB1189C1021005E35F6 /* main.m */,
 				0F003BB3189C1021005E35F6 /* FutuLeague-Prefix.pch */,
+				0F450A7F18A113CB006434FA /* Constants.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

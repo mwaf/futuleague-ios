@@ -8,7 +8,6 @@
 
 #import "FTLGoalCounter.h"
 
-static CGFloat const FTLGoalCounterFontSize = 70.0;
 static CGFloat const FTLGoalCounterLabelMargin = 10.0;
 
 @interface FTLGoalCounter ()
@@ -34,7 +33,7 @@ static CGFloat const FTLGoalCounterLabelMargin = 10.0;
 
     _goalCountLabel = ({
         UILabel *label = [[UILabel alloc] init];
-        label.font = [UIFont systemFontOfSize:FTLGoalCounterFontSize];
+        label.font = [UIFont systemFontOfSize:FTLFontSizeLarge];
         RAC(label, text) = [RACObserve(self, goalCount) map:^id(NSNumber *goalCount) {
             return [NSString stringWithFormat:@"%u", goalCount.unsignedIntegerValue];
         }];
@@ -44,7 +43,7 @@ static CGFloat const FTLGoalCounterLabelMargin = 10.0;
 
     _increaseButton = ({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-        button.titleLabel.font = [UIFont systemFontOfSize:FTLGoalCounterFontSize];
+        button.titleLabel.font = [UIFont systemFontOfSize:FTLFontSizeLarge];
         [button setTitle:@"+" forState:UIControlStateNormal];
         [button addTarget:self action:@selector(increaseButtonTapped) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:button];
@@ -58,7 +57,7 @@ static CGFloat const FTLGoalCounterLabelMargin = 10.0;
 
     _decreaseButton = ({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-        button.titleLabel.font = [UIFont systemFontOfSize:FTLGoalCounterFontSize];
+        button.titleLabel.font = [UIFont systemFontOfSize:FTLFontSizeLarge];
         [button setTitle:@"-" forState:UIControlStateNormal];
         [button addTarget:self action:@selector(decreaseButtonTapped) forControlEvents:UIControlEventTouchUpInside];
         RAC(button, enabled) = canDecreaseSignal;
