@@ -72,14 +72,25 @@
     [view addSubview:self.homeGoalCounter];
     [view addSubview:self.awayGoalCounter];
 
-    [self.homeGoalCounter mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.trailing.equalTo(view.mas_centerX).with.offset(-50);
-        make.centerY.equalTo(view.centerY);
+    [self.homePlayersButton makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.equalTo(view.centerX).with.offset(-50);
+        make.baseline.equalTo(view.centerY).with.offset(-150);
     }];
 
-    [self.awayGoalCounter mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(view.mas_centerX).with.offset(50);
-        make.centerY.equalTo(view.centerY);
+    [self.awayPlayersButton makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(view.centerX).with.offset(50);
+        make.baseline.equalTo(view.centerY).with.offset(-150);
+    }];
+
+    [self.homeGoalCounter makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.equalTo(self.homePlayersButton.trailing);
+        make.top.equalTo(self.homePlayersButton.bottom).with.offset(20);
+    }];
+
+    [self.awayGoalCounter makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self.awayPlayersButton.leading);
+        make.top.equalTo(self.awayPlayersButton.bottom).with.offset(20);
+
     }];
 
     self.view = view;
