@@ -37,7 +37,6 @@
     _homePlayersButton = ({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
         button.titleLabel.font = [UIFont systemFontOfSize:FTLFontSizeMedium];
-        [button setTitle:@"Home Players" forState:UIControlStateNormal];
         [button addTarget:self action:@selector(homePlayersButtonTapped) forControlEvents:UIControlEventTouchUpInside];
         button;
     });
@@ -45,7 +44,6 @@
     _awayPlayersButton = ({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
         button.titleLabel.font = [UIFont systemFontOfSize:FTLFontSizeMedium];
-        [button setTitle:@"Away Players" forState:UIControlStateNormal];
         [button addTarget:self action:@selector(awayPlayersButtonTapped) forControlEvents:UIControlEventTouchUpInside];
         button;
     });
@@ -107,6 +105,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [RACObserve(self.viewModel, homePlayersButtonTitle) subscribeNext:^(NSString *names) {
+        [self.homePlayersButton setTitle:names forState:UIControlStateNormal];
+    }];
+
+    [RACObserve(self.viewModel, awayPlayersButtonTitle) subscribeNext:^(NSString *names) {
+        [self.awayPlayersButton setTitle:names forState:UIControlStateNormal];
+    }];
 
     RAC(self.viewModel, homeScore) = RACObserve(self.homeGoalCounter, goalCount);
     RAC(self.viewModel, awayScore) = RACObserve(self.awayGoalCounter, goalCount);

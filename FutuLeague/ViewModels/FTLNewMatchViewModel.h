@@ -10,11 +10,18 @@
 
 @interface FTLNewMatchViewModel : RVMViewModel
 
+// Commands
 @property (nonatomic, readonly) RACCommand *submitCommand;
 
+// Outlets
+@property (nonatomic, readonly) NSString *homePlayersButtonTitle;
+@property (nonatomic, readonly) NSString *awayPlayersButtonTitle;
+
+// Inputs
 @property (nonatomic, copy) NSNumber *homeScore;
 @property (nonatomic, copy) NSNumber *awayScore;
 
+// Data Sources
 @property (nonatomic, copy, readonly) NSArray *players;
 
 - (instancetype)initWithPlayers:(NSArray *)players;

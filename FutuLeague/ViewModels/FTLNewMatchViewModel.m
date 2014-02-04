@@ -8,6 +8,7 @@
 
 #import "FTLNewMatchViewModel.h"
 #import "FTLMatchStore.h"
+#import "FTLPlayer.h"
 
 @interface FTLNewMatchViewModel ()
 
@@ -15,6 +16,9 @@
 @property (nonatomic, strong) RACSignal *validFormSignal;
 
 @property (nonatomic, copy) NSArray *players;
+
+@property (nonatomic, copy) NSArray *homePlayers;
+@property (nonatomic, copy) NSArray *awayPlayers;
 
 @end
 
@@ -28,6 +32,26 @@
     if (!self) return nil;
 
     _players = players;
+
+    RAC(self, homePlayersButtonTitle) = [RACObserve(self, homePlayers) map:^id(NSArray *team) {
+        if (team.count > 0)
+        {
+            return [[[team.rac_sequence map:^id(FTLPlayer *player) {
+                return player.name;
+            }] array] componentsJoinedByString:@", "];
+        }
+        return @"Home Players";
+    }];
+
+    RAC(self, awayPlayersButtonTitle) = [RACObserve(self, awayPlayers) map:^id(NSArray *team) {
+        if (team.count > 0)
+        {
+            return [[[team.rac_sequence map:^id(FTLPlayer *player) {
+                return player.name;
+            }] array] componentsJoinedByString:@", "];
+        }
+        return @"Away Players";
+    }];
 
     return self;
 }
