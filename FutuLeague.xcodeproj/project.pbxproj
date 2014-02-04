@@ -29,6 +29,7 @@
 		0F003BED189C3FF0005E35F6 /* FTLNewMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BEC189C3FF0005E35F6 /* FTLNewMatchViewController.m */; };
 		0F003BF0189C406D005E35F6 /* FTLNewMatchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F003BEF189C406D005E35F6 /* FTLNewMatchViewModel.m */; };
 		0F450A77189FA155006434FA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0F450A79189FA155006434FA /* Localizable.strings */; };
+		0F450A7E189FE654006434FA /* FTLGoalCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F450A7D189FE654006434FA /* FTLGoalCounter.m */; };
 		0FE2A7BA189C512800B5D542 /* FTLMatchStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE2A7B9189C512800B5D542 /* FTLMatchStore.m */; };
 		3A18958FB7B044F69148A9C7 /* libPods-FutuLeague.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85619236010D42FBB50D56B4 /* libPods-FutuLeague.a */; };
 		6F91E2C1189C2CCA00CFD9F5 /* ModelsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F91E2C0189C2CCA00CFD9F5 /* ModelsSpec.m */; };
@@ -88,6 +89,8 @@
 		0F450A72189D257F006434FA /* ColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHelper.h; sourceTree = "<group>"; };
 		0F450A78189FA155006434FA /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0F450A7A189FAE01006434FA /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		0F450A7C189FE654006434FA /* FTLGoalCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLGoalCounter.h; sourceTree = "<group>"; };
+		0F450A7D189FE654006434FA /* FTLGoalCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLGoalCounter.m; sourceTree = "<group>"; };
 		0FE2A7B8189C512800B5D542 /* FTLMatchStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTLMatchStore.h; sourceTree = "<group>"; };
 		0FE2A7B9189C512800B5D542 /* FTLMatchStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTLMatchStore.m; sourceTree = "<group>"; };
 		13F9D42626D64B7E973C0D49 /* libPods-FutuLeagueTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FutuLeagueTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +223,8 @@
 				0F003BD8189C1184005E35F6 /* FTLRankingsViewController.m */,
 				0F003BEB189C3FF0005E35F6 /* FTLNewMatchViewController.h */,
 				0F003BEC189C3FF0005E35F6 /* FTLNewMatchViewController.m */,
+				0F450A7C189FE654006434FA /* FTLGoalCounter.h */,
+				0F450A7D189FE654006434FA /* FTLGoalCounter.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -440,6 +445,7 @@
 				0F003BD9189C1184005E35F6 /* FTLRankingsViewController.m in Sources */,
 				08C457FB189C30FE00E174FD /* FTLMatch.m in Sources */,
 				0F003BB2189C1021005E35F6 /* main.m in Sources */,
+				0F450A7E189FE654006434FA /* FTLGoalCounter.m in Sources */,
 				0F003BDF189C144E005E35F6 /* FTLPlayer.m in Sources */,
 				08C457F8189C23FD00E174FD /* FTLClub.m in Sources */,
 				0F003BF0189C406D005E35F6 /* FTLNewMatchViewModel.m in Sources */,

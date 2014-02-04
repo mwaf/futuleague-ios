@@ -8,6 +8,7 @@
 
 #import "FTLNewMatchViewController.h"
 #import "FTLNewMatchViewModel.h"
+#import "FTLGoalCounter.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
 @interface FTLNewMatchViewController ()
@@ -16,8 +17,8 @@
 
 @property (nonatomic, strong) UIButton *homePlayersButton;
 @property (nonatomic, strong) UIButton *awayPlayersButton;
-@property (nonatomic, strong) UITextField *homeScoreField;
-@property (nonatomic, strong) UITextField *awayScoreField;
+@property (nonatomic, strong) FTLGoalCounter *homeGoalCounter;
+@property (nonatomic, strong) FTLGoalCounter *awayGoalCounter;
 
 @end
 
@@ -44,16 +45,14 @@
         button;
     });
 
-    _homeScoreField = ({
-        UITextField *field = [[UITextField alloc] init];
-        field.keyboardType = UIKeyboardTypeNumberPad;
-        field;
+    _homeGoalCounter = ({
+        FTLGoalCounter *counter = [[FTLGoalCounter alloc] init];
+        counter;
     });
 
-    _awayScoreField = ({
-        UITextField *field = [[UITextField alloc] init];
-        field.keyboardType = UIKeyboardTypeNumberPad;
-        field;
+    _awayGoalCounter = ({
+        FTLGoalCounter *counter = [[FTLGoalCounter alloc] init];
+        counter;
     });
 
     return self;
@@ -68,8 +67,18 @@
 
     [view addSubview:self.homePlayersButton];
     [view addSubview:self.awayPlayersButton];
-    [view addSubview:self.homeScoreField];
-    [view addSubview:self.awayScoreField];
+    [view addSubview:self.homeGoalCounter];
+    [view addSubview:self.awayGoalCounter];
+
+    [self.homeGoalCounter mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.equalTo(view.mas_centerX).with.offset(-50);
+        make.centerY.equalTo(view.centerY);
+    }];
+
+    [self.awayGoalCounter mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(view.mas_centerX).with.offset(50);
+        make.centerY.equalTo(view.centerY);
+    }];
 
     self.view = view;
 }
@@ -77,20 +86,14 @@
 - (void)updateViewConstraints
 {
     [super updateViewConstraints];
-
-    [self.homeScoreField mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.center.equalTo(self.view);
-        make.leading.equalTo(self.view.mas_leading).with.offset(30);
-        make.bottom.equalTo(self.view.mas_bottom).with.offset(-30);
-    }];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    RAC(self.viewModel, homeScore) = self.homeScoreField.rac_textSignal;
-    RAC(self.viewModel, awayScore) = self.awayScoreField.rac_textSignal;
+    RAC(self.viewModel, homeScore) = RACObserve(self.homeGoalCounter, goalCount);
+    RAC(self.viewModel, awayScore) = RACObserve(self.awayGoalCounter, goalCount);
 
     self.navigationItem.rightBarButtonItem = ({
         UIBarButtonItem *item = [[UIBarButtonItem alloc]
