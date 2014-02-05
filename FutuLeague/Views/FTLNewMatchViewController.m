@@ -119,7 +119,7 @@
 
     self.navigationItem.rightBarButtonItem = ({
         UIBarButtonItem *item = [[UIBarButtonItem alloc]
-                                 initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:nil action:nil];
+                                 initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:nil action:nil];
         item.rac_command = self.viewModel.submitCommand;
         item;
     });
@@ -147,6 +147,7 @@
 {
     FTLPlayersSelectionViewModel *viewModel = [[FTLPlayersSelectionViewModel alloc] initWithPlayers:self.viewModel.players];
     FTLPlayersSelectionViewController *viewController = [[FTLPlayersSelectionViewController alloc] initWithViewModel:viewModel];
+
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

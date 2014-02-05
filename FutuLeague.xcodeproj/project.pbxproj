@@ -229,20 +229,12 @@
 		0F003BD4189C10BE005E35F6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6FB24CA1189C505800EDB3F8 /* FTLPlayerCell.h */,
-				6FB24CA2189C505800EDB3F8 /* FTLPlayerCell.m */,
-				6FB24CA3189C505800EDB3F8 /* FTLPlayerCell+FTLPlayer.h */,
-				6FB24CA4189C505800EDB3F8 /* FTLPlayerCell+FTLPlayer.m */,
-				0F450A8618A12386006434FA /* FTLPlayerSelectionCell.h */,
-				0F450A8718A12386006434FA /* FTLPlayerSelectionCell.m */,
-				0F450A8918A1254C006434FA /* FTLPlayerSelectionCell+FTLPlayer.h */,
-				0F450A8A18A1254C006434FA /* FTLPlayerSelectionCell+FTLPlayer.m */,
+				0F450A8D18A13926006434FA /* Cells */,
+				0F450A8F18A13931006434FA /* Counters */,
 				0F003BD7189C1184005E35F6 /* FTLRankingsViewController.h */,
 				0F003BD8189C1184005E35F6 /* FTLRankingsViewController.m */,
 				0F003BEB189C3FF0005E35F6 /* FTLNewMatchViewController.h */,
 				0F003BEC189C3FF0005E35F6 /* FTLNewMatchViewController.m */,
-				0F450A7C189FE654006434FA /* FTLGoalCounter.h */,
-				0F450A7D189FE654006434FA /* FTLGoalCounter.m */,
 				0F450A8018A11B9E006434FA /* FTLPlayersSelectionViewController.h */,
 				0F450A8118A11B9E006434FA /* FTLPlayersSelectionViewController.m */,
 			);
@@ -296,6 +288,30 @@
 				0F003BE9189C2BD8005E35F6 /* FTLAPISessionManager+Signals.m */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0F450A8D18A13926006434FA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6FB24CA1189C505800EDB3F8 /* FTLPlayerCell.h */,
+				6FB24CA2189C505800EDB3F8 /* FTLPlayerCell.m */,
+				6FB24CA3189C505800EDB3F8 /* FTLPlayerCell+FTLPlayer.h */,
+				6FB24CA4189C505800EDB3F8 /* FTLPlayerCell+FTLPlayer.m */,
+				0F450A8618A12386006434FA /* FTLPlayerSelectionCell.h */,
+				0F450A8718A12386006434FA /* FTLPlayerSelectionCell.m */,
+				0F450A8918A1254C006434FA /* FTLPlayerSelectionCell+FTLPlayer.h */,
+				0F450A8A18A1254C006434FA /* FTLPlayerSelectionCell+FTLPlayer.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		0F450A8F18A13931006434FA /* Counters */ = {
+			isa = PBXGroup;
+			children = (
+				0F450A7C189FE654006434FA /* FTLGoalCounter.h */,
+				0F450A7D189FE654006434FA /* FTLGoalCounter.m */,
+			);
+			name = Counters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

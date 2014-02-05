@@ -12,6 +12,7 @@
 
 @interface FTLPlayersSelectionViewModel : RVMViewModel
 
+// Data Source
 @property (nonatomic, copy, readonly) NSArray *players;
 
 - (instancetype)initWithPlayers:(NSArray *)players;

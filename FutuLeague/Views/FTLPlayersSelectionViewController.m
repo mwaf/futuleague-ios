@@ -38,9 +38,20 @@ static NSString * const FTLPlayerSelectionCellIdentifier = @"FTLPlayerSelectionC
 
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.allowsMultipleSelection = YES;
-
     [self.collectionView registerClass:FTLPlayerSelectionCell.class
             forCellWithReuseIdentifier:FTLPlayerSelectionCellIdentifier];
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                              initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                              target:self
+                                              action:@selector(doneButtonTapped)];
+}
+
+#pragma mark - User Interaction
+
+- (void)doneButtonTapped
+{
+
 }
 
 #pragma mark - UICollectionViewDataSource
