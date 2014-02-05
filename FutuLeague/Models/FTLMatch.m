@@ -8,6 +8,7 @@
 
 #import "FTLMatch.h"
 #import "FTLPlayer.h"
+#import "UTCDateFormatter.h"
 
 @implementation FTLMatch
 
@@ -21,7 +22,8 @@
              @"homeClub": @"homeClub",
              @"awayClub": @"awayClub",
              @"homeScore": @"homeScore",
-             @"awayScore": @"awayScore"
+             @"awayScore": @"awayScore",
+             @"timestamp": @"timestamp"
              };
 }
 
@@ -43,6 +45,15 @@
 + (NSValueTransformer *)awayClubJSONTransformer
 {
     return [MTLValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[FTLClub class]];
+}
+
++ (NSValueTransformer *)timestampJSONTransformer
+{
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *string) {
+        return [[UTCDateFormatter sharedFormatter] dateFromString:string];
+    } reverseBlock:^(NSDate *date) {
+        return [[UTCDateFormatter sharedFormatter] stringFromDate:date];
+    }];
 }
 
 
