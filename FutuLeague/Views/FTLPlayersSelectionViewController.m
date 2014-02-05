@@ -19,6 +19,8 @@ static NSString * const FTLPlayerSelectionCellIdentifier = @"FTLPlayerSelectionC
 
 @implementation FTLPlayersSelectionViewController
 
+#pragma mark - Setup
+
 - (instancetype)initWithViewModel:(FTLPlayersSelectionViewModel *)viewModel
 {
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
@@ -31,6 +33,8 @@ static NSString * const FTLPlayerSelectionCellIdentifier = @"FTLPlayerSelectionC
 
     return self;
 }
+
+#pragma mark - View Lifecycle
 
 - (void)viewDidLoad
 {
