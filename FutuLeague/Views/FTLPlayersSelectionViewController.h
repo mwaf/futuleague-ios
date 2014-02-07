@@ -8,8 +8,26 @@
 
 #import "FTLPlayersSelectionViewModel.h"
 
+typedef NS_ENUM(NSUInteger, FTLPlayersSelectionViewControllerType) {
+    FTLPlayersSelectionViewControllerTypeHome = 0,
+    FTLPlayersSelectionViewControllerTypeAway
+};
+
+@protocol FTLPlayersSelectionViewControllerDelegate;
+
 @interface FTLPlayersSelectionViewController : UICollectionViewController
 
-- (instancetype)initWithViewModel:(FTLPlayersSelectionViewModel *)viewModel;
+@property (nonatomic, assign, readonly) FTLPlayersSelectionViewControllerType type;
+@property (nonatomic, weak) id<FTLPlayersSelectionViewControllerDelegate> delegate;
+
+- (instancetype)initWithViewModel:(FTLPlayersSelectionViewModel *)viewModel
+                             type:(FTLPlayersSelectionViewControllerType)type;
+
+@end
+
+@protocol FTLPlayersSelectionViewControllerDelegate <NSObject>
+
+- (void)playersSelectionViewController:(FTLPlayersSelectionViewController *)viewController
+                      didSelectPlayers:(NSArray *)players;
 
 @end

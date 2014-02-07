@@ -17,5 +17,6 @@
 
 - (instancetype)initWithPlayers:(NSArray *)players;
 - (FTLPlayer *)playerAtIndex:(NSUInteger)index;
+- (NSArray *)playersAtIndexes:(NSIndexSet *)indexes;
 
 @end

@@ -17,9 +17,6 @@
 
 @property (nonatomic, copy) NSArray *players;
 
-@property (nonatomic, copy) NSArray *homePlayers;
-@property (nonatomic, copy) NSArray *awayPlayers;
-
 @end
 
 @implementation FTLNewMatchViewModel

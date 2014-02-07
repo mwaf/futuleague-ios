@@ -21,7 +21,7 @@ static NSString * const FTLPlayerSelectionCellIdentifier = @"FTLPlayerSelectionC
 
 #pragma mark - Setup
 
-- (instancetype)initWithViewModel:(FTLPlayersSelectionViewModel *)viewModel
+- (instancetype)initWithViewModel:(FTLPlayersSelectionViewModel *)viewModel type:(FTLPlayersSelectionViewControllerType)type
 {
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.itemSize = FTLPlayerSelectionCellSize;
@@ -30,6 +30,7 @@ static NSString * const FTLPlayerSelectionCellIdentifier = @"FTLPlayerSelectionC
     if (!self) return nil;
 
     _viewModel = viewModel;
+    _type = type;
 
     return self;
 }
@@ -55,7 +56,15 @@ static NSString * const FTLPlayerSelectionCellIdentifier = @"FTLPlayerSelectionC
 
 - (void)doneButtonTapped
 {
+    NSMutableIndexSet *indexes = [NSMutableIndexSet indexSet];
+    for (NSIndexPath *indexPath in self.collectionView.indexPathsForSelectedItems)
+    {
+        [indexes addIndex:indexPath.row];
+    }
+    NSArray *selectedPlayers = [self.viewModel playersAtIndexes:indexes];
+    [self.delegate playersSelectionViewController:self didSelectPlayers:selectedPlayers];
 
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UICollectionViewDataSource

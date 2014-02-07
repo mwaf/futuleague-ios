@@ -24,6 +24,9 @@
 // Data Sources
 @property (nonatomic, copy, readonly) NSArray *players;
 
+@property (nonatomic, copy) NSArray *homePlayers;
+@property (nonatomic, copy) NSArray *awayPlayers;
+
 - (instancetype)initWithPlayers:(NSArray *)players;
 
 @end

@@ -39,4 +39,13 @@
     return nil;
 }
 
+- (NSArray *)playersAtIndexes:(NSIndexSet *)indexes
+{
+    if (indexes.lastIndex < self.players.count)
+    {
+        return [self.players objectsAtIndexes:indexes];
+    }
+    return nil;
+}
+
 @end

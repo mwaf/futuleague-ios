@@ -12,7 +12,7 @@
 #import "FTLPlayersSelectionViewController.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
-@interface FTLNewMatchViewController ()
+@interface FTLNewMatchViewController () <FTLPlayersSelectionViewControllerDelegate>
 
 @property (nonatomic, strong) FTLNewMatchViewModel *viewModel;
 
@@ -145,15 +145,38 @@
 
 - (void)homePlayersButtonTapped
 {
-    FTLPlayersSelectionViewModel *viewModel = [[FTLPlayersSelectionViewModel alloc] initWithPlayers:self.viewModel.players];
-    FTLPlayersSelectionViewController *viewController = [[FTLPlayersSelectionViewController alloc] initWithViewModel:viewModel];
-
-    [self.navigationController pushViewController:viewController animated:YES];
+    [self navigateToPlayersSelectionViewControllerWithType:FTLPlayersSelectionViewControllerTypeHome];
 }
 
 - (void)awayPlayersButtonTapped
 {
+    [self navigateToPlayersSelectionViewControllerWithType:FTLPlayersSelectionViewControllerTypeAway];
+}
 
+#pragma mark - Internal Helpers
+
+- (void)navigateToPlayersSelectionViewControllerWithType:(FTLPlayersSelectionViewControllerType)type
+{
+    FTLPlayersSelectionViewModel *viewModel = [[FTLPlayersSelectionViewModel alloc] initWithPlayers:self.viewModel.players];
+    FTLPlayersSelectionViewController *viewController = [[FTLPlayersSelectionViewController alloc]
+                                                         initWithViewModel:viewModel type:type];
+    viewController.delegate = self;
+
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+#pragma mark - FTLPlayersSelectionViewControllerDelegate
+
+- (void)playersSelectionViewController:(FTLPlayersSelectionViewController *)viewController didSelectPlayers:(NSArray *)players
+{
+    if (viewController.type == FTLPlayersSelectionViewControllerTypeHome)
+    {
+        self.viewModel.homePlayers = players;
+    }
+    else if (viewController.type == FTLPlayersSelectionViewControllerTypeAway)
+    {
+        self.viewModel.awayPlayers = players;
+    }
 }
 
 @end
