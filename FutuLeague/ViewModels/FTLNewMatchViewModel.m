@@ -60,7 +60,10 @@
     if (!_submitCommand)
     {
         _submitCommand = [[RACCommand alloc] initWithEnabled:self.validFormSignal signalBlock:^RACSignal *(id input) {
-            return [[FTLMatchStore sharedStore] postMatchWithPlayers:self.players homeScore:self.homeScore awayScore:self.awayScore];
+            return [[FTLMatchStore sharedStore] postMatchWithHomePlayers:self.homePlayers
+                                                             awayPlayers:self.awayPlayers
+                                                               homeScore:self.homeScore
+                                                               awayScore:self.awayScore];
         }];
     }
     return _submitCommand;

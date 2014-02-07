@@ -8,6 +8,7 @@
 
 #import "FTLMatchStore.h"
 #import "FTLAPISessionManager+Signals.h"
+#import "FTLPlayer.h"
 #import <Mantle/Mantle.h>
 
 @implementation FTLMatchStore
@@ -26,18 +27,25 @@
 
 #pragma mark - Networking
 
-- (RACSignal *)postMatchWithPlayers:(NSArray *)players homeScore:(NSNumber *)homeScore awayScore:(NSNumber *)awayScore
+- (RACSignal *)postMatchWithHomePlayers:(NSArray *)homePlayers
+                            awayPlayers:(NSArray *)awayPlayers
+                              homeScore:(NSNumber *)homeScore
+                              awayScore:(NSNumber *)awayScore
 {
-    NSArray *homeTeam = @[[MTLJSONAdapter JSONDictionaryFromModel:players.firstObject]];
-    NSArray *awayTeam = @[[MTLJSONAdapter JSONDictionaryFromModel:players.lastObject]];
+    NSArray *homePlayersJSON = [[homePlayers.rac_sequence map:^id(FTLPlayer *player) {
+        return [MTLJSONAdapter JSONDictionaryFromModel:player];
+    }] array];
+    NSArray *awayPlayersJSON = [[awayPlayers.rac_sequence map:^id(FTLPlayer *player) {
+        return [MTLJSONAdapter JSONDictionaryFromModel:player];
+    }] array];
 
     NSDictionary *parameters = @{
-        @"homeTeam": homeTeam,
-        @"awayTeam": awayTeam,
+        @"homeTeam": homePlayersJSON,
+        @"awayTeam": awayPlayersJSON,
         @"homeClub": [NSNull null],
         @"awayClub": [NSNull null],
-        @"homeScore": @1,
-        @"awayScore": @0,
+        @"homeScore": homeScore,
+        @"awayScore": awayScore,
         @"timestamp": @""
     };
 
