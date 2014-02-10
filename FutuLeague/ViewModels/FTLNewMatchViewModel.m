@@ -74,9 +74,15 @@
     if (!_validFormSignal)
     {
         _validFormSignal = [RACSignal
-            combineLatest:@[RACObserve(self, homeScore), RACObserve(self, awayScore)]
-            reduce:^id(NSNumber *homeScore, NSNumber *awayScore){
-                return @(homeScore && awayScore);
+            combineLatest:@[RACObserve(self, homePlayers),
+                            RACObserve(self, awayPlayers),
+                            RACObserve(self, homeScore),
+                            RACObserve(self, awayScore)]
+            reduce:^id(NSArray *homePlayers, NSArray *awayPlayers, NSNumber *homeScore, NSNumber *awayScore) {
+                NSSet *homeSet = [NSSet setWithArray:homePlayers];
+                NSSet *awaySet = [NSSet setWithArray:awayPlayers];
+                BOOL conflictingPlayers = [homeSet intersectsSet:awaySet];
+                return @(homeSet.count && awaySet.count && !conflictingPlayers && homeScore && awayScore);
             }];
     }
     return _validFormSignal;
